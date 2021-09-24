@@ -48,4 +48,18 @@
       <div class="">{{ height | number: "1.0-3" }}</div>
     </div>
   </div>
+  <div class="row">
+    <div class="form-group col">
+      <label for="">Miles</label>
+      <input (input)="onMilesChange($event)" class="form-control" />
+    </div>
+    <div class="col">
+      <label for="">
+        <b>Kilometers: </b>
+      </label>
+      <div *ngIf="(miles | convert: 'km') >= 10">
+        {{ miles | convert: "km" | number: "1.0-3" }}
+      </div>
+    </div>
+  </div>
 </div>

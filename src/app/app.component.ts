@@ -10,6 +10,7 @@ export class AppComponent {
   paymentDate = '';
   amount = 0;
   height = 0;
+  miles = 0;
 
   car = {
     name: 'Toyota',
@@ -39,5 +40,11 @@ export class AppComponent {
     const target = event.target as HTMLInputElement;
     const value = target.value;
     this.height = parseFloat(value);
+  }
+
+  onMilesChange(event: Event) {
+    const target = event.target as HTMLInputElement;
+    const value = target.value;
+    this.miles = parseFloat(value);
   }
 }
