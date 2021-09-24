@@ -1,5 +1,51 @@
-<div class="">
-  <label for="">Payee Name</label>
-  <input (input)="onNameChange($event)" />
+<div class="container">
+  <h3>Payment Form</h3>
+  <div class="row">
+    <div class="form-group col">
+      <label for="">Payee Name</label>
+      <input (input)="onNameChange($event)" class="form-control" />
+    </div>
+    <div class="col">
+      <label for="">
+        <b>Name: </b>
+      </label>
+      <div class="">{{ name | titlecase }}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label for="">Payment Date</label>
+      <input type="date" (input)="onDateChange($event)" class="form-control" />
+    </div>
+    <div class="col">
+      <label for="">
+        <b>Payment Date: </b>
+      </label>
+      <div class="">{{ paymentDate | date: "MMMM dd, y" }}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label for="">Payment Amount</label>
+      <input (input)="onAmountChange($event)" class="form-control" />
+    </div>
+    <div class="col">
+      <label for="">
+        <b>Payment Amount: </b>
+      </label>
+      <div class="">{{ amount | currency: "INR" }}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label for="">Height</label>
+      <input (input)="onHeightChange($event)" class="form-control" />
+    </div>
+    <div class="col">
+      <label for="">
+        <b>Height: </b>
+      </label>
+      <div class="">{{ height | number: "1.0-3" }}</div>
+    </div>
+  </div>
 </div>
-{{ name | titlecase }}
